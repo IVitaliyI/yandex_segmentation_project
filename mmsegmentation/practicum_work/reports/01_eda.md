@@ -43,4 +43,4 @@
 
 ### EDA
 
-Опишите свои работы по EDA, приложите артефакты (графики и/или Jupyter Notebook)
+ССылка на ноутбук [01_eda.md](../../practicum_work/src/notebooks/01_eda.ipynb)
