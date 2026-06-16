@@ -24,12 +24,13 @@
 
 В valid проблем не обнаружено.
 
-| Исходное изображение | Изначальная маска | Исправленная маска |
+| Исходное изображение | Изначальная маска | Исправленная маска | Комментарий |
 | :---: | :---: | :---: |
-| ![Original](../../train_dataset_for_students/img/train/000000023731_404.jpg) | ![Bad Overlay](../..//visualize_dataset/train/000000023731_404_overlay.jpg) | ![Fixed Overlay](path/to/corrected/train/000000023731_404_fixed.jpg) |
-
-> **Комментарий:** На исходном оверлее (в центре) заметно сильное смещение маски относительно реальных границ объекта. В заготовке справа контуры исправлены, что предотвратит зашумление градиента при обучении модели mmsegmentation.
-
+| 
+![Original](../../data/train_dataset_for_students/img/train/000000023731_404.jpg) | 
+![Bad Overlay](../..//visualize_dataset/train/000000023731_404_overlay.jpg) | 
+![Fixed Overlay](path/to/corrected/train/000000023731_404_fixed.jpg) |
+Часть маски была утеряна |
 ### EDA
 
 Опишите свои работы по EDA, приложите артефакты (графики и/или Jupyter Notebook)
