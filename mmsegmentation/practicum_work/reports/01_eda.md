@@ -26,11 +26,7 @@
 
 | Исходное изображение | Изначальная маска | Исправленная маска | Комментарий |
 | :---: | :---: | :---: |
-| 
-![Original](../../data/train_dataset_for_students/img/train/000000023731_404.jpg) | 
-![Bad Overlay](../..//visualize_dataset/train/000000023731_404_overlay.jpg) | 
-![Fixed Overlay](path/to/corrected/train/000000023731_404_fixed.jpg) |
-Часть маски была утеряна |
+| ![Original](../../data/train_dataset_for_students/img/train/000000023731_404.jpg) | ![Bad Overlay](../..//visualize_dataset/train/000000023731_404_overlay.jpg) | ![Fixed Overlay](path/to/corrected/train/000000023731_404_fixed.jpg) | Часть маски была утеряна |
 ### EDA
 
 Опишите свои работы по EDA, приложите артефакты (графики и/или Jupyter Notebook)
