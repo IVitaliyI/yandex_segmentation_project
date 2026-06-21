@@ -26,6 +26,3 @@
 #### Анализ ошибок модели (Fail Cases)
 ![Классификация](../artifacts/results/deeplabv3_experiment1/pictures/000000398440_2108_overlay.jpg)
 ![Классификация](../artifacts/results/deeplabv3_experiment1/pictures/000000270785_126_overlay.jpg)
-
-Как видно, из работы основные проблемы модели это точно опредить границы объектов, а также у модели возникают проблемы с сегментацией объектов на изображениях имеющих несколько объектов. 
-* [Ссылка на эксперимент в ClearML](https://app.clear.ml/projects/82b447a13dfd4bc0ac9dfb5f93ff85b2/experiments/4b948badd11f459f88df9d275c1041b1/output/execution)
