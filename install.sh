@@ -23,7 +23,7 @@ echo "Установка завершена"
 echo "4. Проверка установки mmsegmentation"
 mkdir -p tmp
 
-uv mim download mmsegmentation --config pspnet_r50-d8_4xb2-40k_cityscapes-512x1024 --dest tmp/
+uv run mim download mmsegmentation --config pspnet_r50-d8_4xb2-40k_cityscapes-512x1024 --dest tmp/
 
 uv run demo/image_demo.py \
   demo/demo.png \
