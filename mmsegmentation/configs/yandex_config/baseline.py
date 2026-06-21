@@ -29,23 +29,39 @@ visualizer = dict(
 
 
 input_size = (512, 512)
-data_preprocessor = dict(size=input_size)
+data_preprocessor = dict(size=input_size, seg_pad_val=0)
 model = dict(
     decode_head=dict(
         num_classes=3,
-        loss_decode=dict(
-            type='DiceLoss',
-            use_sigmoid=False,
-            loss_weight=1.0,
-        )
+        loss_decode=[
+            dict(
+                type='CrossEntropyLoss',
+                use_sigmoid=False,
+                loss_weight=1.0,
+                class_weight=[0.065, 1.0, 1.30],
+            ),
+            dict(
+                type='DiceLoss',
+                use_sigmoid=False,
+                loss_weight=1.0,
+            ),
+        ]
     ),
     auxiliary_head=dict(
         num_classes=3,
-        loss_decode=dict(
-            type='DiceLoss',
-            use_sigmoid=False,
-            loss_weight=0.4,
-        )
+        loss_decode=[
+            dict(
+                type='CrossEntropyLoss',
+                use_sigmoid=False,
+                loss_weight=0.4,
+                class_weight=[0.065, 1.0, 1.30],
+            ),
+            dict(
+                type='DiceLoss',
+                use_sigmoid=False,
+                loss_weight=0.4,
+            ),
+        ]
     ),
     data_preprocessor=data_preprocessor,
     test_cfg=dict(mode="whole")

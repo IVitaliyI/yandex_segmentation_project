@@ -6,7 +6,7 @@ data_preprocessor = dict(
         103.53,
     ],
     pad_val=0,
-    seg_pad_val=0,
+    seg_pad_val=255,
     size=(
         512,
         512,
@@ -95,7 +95,7 @@ model = dict(
             103.53,
         ],
         pad_val=0,
-        seg_pad_val=0,
+        seg_pad_val=255,
         size=(
             512,
             512,
@@ -191,7 +191,7 @@ test_dataset = dict(
     seg_map_suffix='.png',
     type='TrainDatasetForStudents')
 test_evaluator = dict(
-    ignore_index=0, iou_metrics=[
+    iou_metrics=[
         'mIoU',
         'mDice',
     ], type='IoUMetric')
@@ -328,7 +328,7 @@ val_dataset = dict(
     seg_map_suffix='.png',
     type='TrainDatasetForStudents')
 val_evaluator = dict(
-    ignore_index=0, iou_metrics=[
+    iou_metrics=[
         'mIoU',
         'mDice',
     ], type='IoUMetric')

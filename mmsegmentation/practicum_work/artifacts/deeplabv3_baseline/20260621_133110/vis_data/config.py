@@ -6,7 +6,7 @@ data_preprocessor = dict(
         103.53,
     ],
     pad_val=0,
-    seg_pad_val=0,
+    seg_pad_val=255,
     size=(
         512,
         512,
@@ -95,7 +95,7 @@ model = dict(
             103.53,
         ],
         pad_val=0,
-        seg_pad_val=0,
+        seg_pad_val=255,
         size=(
             512,
             512,

@@ -6,7 +6,7 @@ data_preprocessor = dict(
         103.53,
     ],
     pad_val=0,
-    seg_pad_val=0,
+    seg_pad_val=255,
     size=(
         512,
         512,
@@ -55,7 +55,15 @@ model = dict(
                 loss_weight=0.4,
                 type='CrossEntropyLoss',
                 use_sigmoid=False),
-            dict(loss_weight=0.4, type='DiceLoss', use_sigmoid=False),
+            dict(
+                class_weight=[
+                    0.065,
+                    1.0,
+                    1.3,
+                ],
+                loss_weight=0.4,
+                type='DiceLoss',
+                use_sigmoid=False),
         ],
         norm_cfg=dict(requires_grad=True, type='SyncBN'),
         num_classes=3,
@@ -95,7 +103,7 @@ model = dict(
             103.53,
         ],
         pad_val=0,
-        seg_pad_val=0,
+        seg_pad_val=255,
         size=(
             512,
             512,
@@ -128,7 +136,15 @@ model = dict(
                 loss_weight=1.0,
                 type='CrossEntropyLoss',
                 use_sigmoid=False),
-            dict(loss_weight=1.0, type='DiceLoss', use_sigmoid=False),
+            dict(
+                class_weight=[
+                    0.065,
+                    1.0,
+                    1.3,
+                ],
+                loss_weight=1.0,
+                type='DiceLoss',
+                use_sigmoid=False),
         ],
         norm_cfg=dict(requires_grad=True, type='SyncBN'),
         num_classes=3,
@@ -191,7 +207,7 @@ test_dataset = dict(
     seg_map_suffix='.png',
     type='TrainDatasetForStudents')
 test_evaluator = dict(
-    ignore_index=0, iou_metrics=[
+    iou_metrics=[
         'mIoU',
         'mDice',
     ], type='IoUMetric')
@@ -328,7 +344,7 @@ val_dataset = dict(
     seg_map_suffix='.png',
     type='TrainDatasetForStudents')
 val_evaluator = dict(
-    ignore_index=0, iou_metrics=[
+    iou_metrics=[
         'mIoU',
         'mDice',
     ], type='IoUMetric')
