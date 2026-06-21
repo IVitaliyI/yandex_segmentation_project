@@ -28,9 +28,25 @@ visualizer = dict(
 )
 
 
-input_suze = (512, 512)
-data_preprocessor = dict(size=input_suze)
+input_size = (512, 512)
+data_preprocessor = dict(size=input_size)
 model = dict(
+    decode_head=dict(
+        num_classes=3,
+        loss_decode=dict(
+            type='DiceLoss',
+            use_sigmoid=False,
+            loss_weight=1.0,
+        )
+    ),
+    auxiliary_head=dict(
+        num_classes=3,
+        loss_decode=dict(
+            type='DiceLoss',
+            use_sigmoid=False,
+            loss_weight=0.4,
+        )
+    ),
     data_preprocessor=data_preprocessor,
     test_cfg=dict(mode="whole")
 )
